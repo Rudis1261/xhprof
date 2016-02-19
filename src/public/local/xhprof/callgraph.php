@@ -31,7 +31,7 @@
 
 // by default assume that xhprof_html & xhprof_lib directories
 // are at the same level.
-$GLOBALS['XHPROF_LIB_ROOT'] = dirname(__FILE__) . '/../xhprof_lib';
+$GLOBALS['XHPROF_LIB_ROOT'] = dirname(__FILE__) . '/xhprof_lib';
 
 require_once $GLOBALS['XHPROF_LIB_ROOT'].'/display/xhprof.php';
 
@@ -77,6 +77,11 @@ if ($threshold < 0 || $threshold > 1) {
 if (!array_key_exists($type, $xhprof_legal_image_types)) {
   $type = $params['type'][1]; // default image type.
 }
+
+//var_dump($type);
+//die();
+$type = "jpg";
+$type = "png";
 
 $xhprof_runs_impl = new XHProfRuns_Default();
 

@@ -79,8 +79,9 @@ function xhprof_generate_mime_header($type, $length) {
   }
 
   if ($mime) {
-    xhprof_http_header('Content-type', $mime);
-    xhprof_http_header('Content-length', (string)$length);
+    //header('Content-type', $mime);
+    //xhprof_http_header('Content-type', $mime);
+    //xhprof_http_header('Content-length', (string)$length);
   }
 }
 
@@ -410,7 +411,9 @@ function  xhprof_render_diff_image($xhprof_runs_impl, $run1, $run2,
                                        $symbol_tab1, $symbol_tab2);
   $content = xhprof_generate_image_by_dot($script, $type);
 
-  xhprof_generate_mime_header($type, strlen($content));
+
+  //xhprof_generate_mime_header($type, strlen($content));
+  //header('Content-Type:image/jpg');
   echo $content;
 }
 
@@ -481,6 +484,7 @@ function xhprof_render_image($xhprof_runs_impl, $run_id, $type, $threshold,
     exit();
   }
 
-  xhprof_generate_mime_header($type, strlen($content));
+  //xhprof_generate_mime_header($type, strlen($content));
+  file_put_contents('image.png', $content);
   echo $content;
 }

@@ -1,6 +1,7 @@
 <?php
 
 ini_set('memory_limit','5G');
+header('Content-Type:image/png');
 
 // Rewrite vars
 // I want to do it a bit differently
@@ -60,10 +61,46 @@ function list_url($sep = '/') {
 }
 
 
-// This file gets auto prepended and allows us to profile a run
+// Determine whether to enable / disable profiling
 $processUrl = list_url();
 if (!empty($_GET['profile']) || !empty($processUrl['get']['profile'])): ?>
-    <div style="background: #bada55; color: #222; padding: 5px; position: absolute; right: 8px; top: 10px; border: 1px solid #999; z-index: 110000;">XHProf Running</div>
+    <?php $_xhprofEnable = true; ?>
+    <?php // <div style="background: #bada55; color: #222; padding: 5px; position: absolute; right: 8px; top: 10px; border: 1px solid #999; z-index: 110000;">XHProf Running</div>  ?>
+    
 <?php else: ?>
-    <div style="background: #ccc; color: #white; padding: 5px; position: absolute; right: 8px; top: 10px; border: 1px solid #999; z-index: 110000;">XHProf Not Running</div>
-<?php endif; ?>
+    <?php $_xhprofEnable = false; ?>
+    <?php //<div style="background: #ccc; color: #white; padding: 5px; position: absolute; right: 8px; top: 10px; border: 1px solid #999; z-index: 110000;">XHProf Not Running</div> ?>
+<?php endif; 
+
+// Ensure that the run directory exists
+$xhprofDir = dirname(__FILE__) . '/xhprof/runs';
+if (!file_exists($xhprofDir)) {
+    mkdir($xhprofDir);
+}
+
+
+// Set the path
+//ini_set('output_buffering', true);
+ini_set('xhprof.output_dir', $xhprofDir);
+if (!extension_loaded('xhprof')) {
+    return;
+}
+
+if (!$_xhprofEnable || !is_dir($xhprofDir) || !is_writeable($xhprofDir)) {
+    return;
+}
+    
+$_xhprofLibDir = dirname(__FILE__).'/xhprof/xhprof_lib';
+include_once($_xhprofLibDir.'/utils/xhprof_lib.php');
+include_once($_xhprofLibDir.'/utils/xhprof_runs.php');
+register_shutdown_function(function() {
+    $namespace = isset($_SERVER['HTTP_HOST']) ? str_replace(".","_",$_SERVER['HTTP_HOST']) : "cli";
+    $xhprof_data = xhprof_disable();
+    $xhprof_runs = new XHProfRuns_Default();
+    $run_id = $xhprof_runs->save_run($xhprof_data, $namespace);
+    file_put_contents("/tmp/xhprof_runs.log",$run_id."\n",FILE_APPEND);
+    //echo "<div align=right><b>View Run at:</b> <a href='http://localhost/xhprof/index.php?run=$run_id&source=$namespace'> Click here </a></div>";
+});
+
+xhprof_enable(XHPROF_FLAGS_NO_BUILTINS | XHPROF_FLAGS_CPU | XHPROF_FLAGS_MEMORY);
+
