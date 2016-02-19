@@ -1,7 +1,8 @@
 <?php
 
+// Let's ensure we have optimal performance. Set this simple thing
+date_default_timezone_set('Africa/Johannesburg');
 ini_set('memory_limit','5G');
-header('Content-Type:image/png');
 
 // Rewrite vars
 // I want to do it a bit differently
@@ -63,14 +64,13 @@ function list_url($sep = '/') {
 
 // Determine whether to enable / disable profiling
 $processUrl = list_url();
-if (!empty($_GET['profile']) || !empty($processUrl['get']['profile'])): ?>
-    <?php $_xhprofEnable = true; ?>
-    <?php // <div style="background: #bada55; color: #222; padding: 5px; position: absolute; right: 8px; top: 10px; border: 1px solid #999; z-index: 110000;">XHProf Running</div>  ?>
-    
-<?php else: ?>
-    <?php $_xhprofEnable = false; ?>
-    <?php //<div style="background: #ccc; color: #white; padding: 5px; position: absolute; right: 8px; top: 10px; border: 1px solid #999; z-index: 110000;">XHProf Not Running</div> ?>
-<?php endif; 
+if (!empty($_GET['profile']) || !empty($processUrl['get']['profile'])) {
+    $_xhprofEnable = true;
+} else {
+    $_xhprofEnable = false;
+}
+
+define('XHPROF_ENABLED', $_xhprofEnable);
 
 // Ensure that the run directory exists
 $xhprofDir = dirname(__FILE__) . '/xhprof/runs';
@@ -89,7 +89,7 @@ if (!extension_loaded('xhprof')) {
 if (!$_xhprofEnable || !is_dir($xhprofDir) || !is_writeable($xhprofDir)) {
     return;
 }
-    
+
 $_xhprofLibDir = dirname(__FILE__).'/xhprof/xhprof_lib';
 include_once($_xhprofLibDir.'/utils/xhprof_lib.php');
 include_once($_xhprofLibDir.'/utils/xhprof_runs.php');

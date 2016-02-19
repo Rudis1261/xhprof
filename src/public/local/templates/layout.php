@@ -9,5 +9,19 @@ if(!defined('SPF')){
 //Main layout page
 echo($header."\n");
 echo($navbar."\n");
-echo($content."\n");
-echo($footer);
+?>
+
+<!-- Main content container -->
+<div class="container">
+
+    <!-- Error / Info Messages -->
+    <?php if (!empty($msg)): ?>
+        <div><?php echo $msg; ?></div>
+    <?php endif;?>
+
+    <!-- Actual body content -->
+    <?php echo($content."\n"); ?>
+</div>
+
+<!-- FOOTER -->
+<?php echo($footer); ?>

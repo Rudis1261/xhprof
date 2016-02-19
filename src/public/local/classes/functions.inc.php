@@ -996,19 +996,10 @@
     spl_autoload_register('spf_init');
     function spf_init($class_name)
     {
-        // Where should we look?
-        $dirs = array(
-            "project" => DOC_ROOT . '/classes/',
-        );
-
-        // For each directory
-        foreach ($dirs as $classType => $dir)
-        {
-            // Does the file exist?
-            if (file_exists($dir.'class.' . strtolower($class_name) . '.php')){
-                require_once($dir.'class.' . strtolower($class_name) . '.php');
-                return;
-            }
+        // Does the file exist?
+        if (file_exists(DOC_ROOT . '/classes/'.'class.' . strtolower($class_name) . '.php')){
+            require_once(DOC_ROOT . '/classes/'.'class.' . strtolower($class_name) . '.php');
+            return;
         }
     }
 
@@ -2472,4 +2463,24 @@
             ),
             2
         ) . $unit[$i];
+    }
+
+    function menuActive($name, $default = false)
+    {
+        $classes = [];
+        if (!defined('ACTIVE_CONTROLLER') || empty($name)) {
+            return '';
+        }
+
+        if (!empty($default)) {
+            $classes[] = $default;
+        }
+
+        if ($name == ACTIVE_CONTROLLER) {
+            $classes[] = 'active';
+        }
+
+        //var_dump($classes);
+
+        echo sprintf("class=\"%s\"", implode(' ', $classes));
     }

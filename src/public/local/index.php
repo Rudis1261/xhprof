@@ -12,6 +12,15 @@ define('SPF', true);
 require(DOC_ROOT . "/classes/class.core_config.php");
 require(DOC_ROOT . "/classes/class.config.php");
 Config::getConfig();
+
+// Initialize our session
+try {
+    session_name('spfs');
+    session_start();
+} catch(exception $e) {
+    error_log($e->getMessage(), 4);
+}
+
 require(DOC_ROOT . "/classes/functions.inc.php");
 
 // Lets start the function to get the execution time
@@ -41,7 +50,7 @@ if (!$exists && empty($_GET['profile'])){
 }
 
 // Some dependency injection
-$Error = spfError::getError();
+$Error = new spfError();
 $db = Database::getDatabase();
 $CSS = new Compost('css');
 $JS = new Compost('js');

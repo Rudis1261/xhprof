@@ -1,3 +1,28 @@
-body{
-  padding-top: 60px;
+.xprofile__status {
+    width: 12px;
+    height: 12px;
+    position: relative;
+    display: inline-block;
+    top: 4px;
+    margin-left: 8px;
+    border-radius: 3px;
+    border: 1px solid #989898;
+}
+
+.xprofile__status.on {
+    background: #24FF24;
+}
+
+.xprofile__status.off {
+    background: red;
+    border: 1px solid #6D6D6D;
+}
+
+a:link {
+    background-color: initial!important;
+}
+
+.navbar-brand.active a,
+.navbar-brand.active {
+    color: white !important;
 }

@@ -10,8 +10,8 @@
 
     <title>XHProf Talk</title>
 
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/css/sticky-footer-navbar.css" rel="stylesheet">
-    <link href="assets/css/custom.css" rel="stylesheet">
+    <link href="<?php echo SITE_URL; ?>/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="<?php echo SITE_URL; ?>/assets/css/sticky-footer-navbar.css" rel="stylesheet">
+    <link href="<?php echo SITE_URL; ?>/assets/css/custom.css" rel="stylesheet">
   </head>
   <body>

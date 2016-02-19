@@ -70,9 +70,9 @@ echo "<html>";
 echo "<head><title>XHProf: Hierarchical Profiler Report</title>";
 xhprof_include_js_css();
 echo "</head>";
+echo "<body>"; ?>
 
-echo "<body>";
-
+<?php
 $vbar  = ' class="vbar"';
 $vwbar = ' class="vwbar"';
 $vwlbar = ' class="vwlbar"';

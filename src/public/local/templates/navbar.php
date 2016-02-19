@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -7,28 +7,42 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">
+      <a <?php menuActive('view', 'navbar-brand'); ?> href="<?php echo SITE_URL; ?>/view/">
         <?php echo icon('dashboard'); ?>
-        XHProfiling
+        XHProf
       </a>
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <!-- <li class="active"><a href="#">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li> -->
-        <!-- <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li class="dropdown-header">Nav header</li>
-            <li><a href="#">Separated link</a></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li> -->
+        <li>
+          <a href="<?php echo SITE_URL; ?>/trash" style="color: red;">
+            <?php echo icon('trash'); ?>
+          </a>
+        </li>
+        <li <?php menuActive('home'); ?>>
+          <a href="<?php echo SITE_URL; ?>/home">
+            Home
+          </a>
+        </li>
+        <li <?php menuActive('info'); ?>>
+          <a href="<?php echo SITE_URL; ?>/info">
+          <?php echo (icon('info-sign')); ?>
+          PHPInfo()
+          </a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav pull-right">
+        <?php if (XHPROF_ENABLED): ?>
+          <a href="?profile=0" class="btn btn-default navbar-btn" style="background: #FFF!important;">
+            XHProf
+            <div class="xprofile__status on">&nbsp;</div>
+          </a>
+          <?php else: ?>
+          <a href="?profile=1" class="btn navbar-btn btn-default" style="background: #FFF!important;">
+            XHProf
+            <div class="xprofile__status off">&nbsp;</div>
+          </a>
+        <?php endif; ?>
       </ul>
     </div>
   </div>

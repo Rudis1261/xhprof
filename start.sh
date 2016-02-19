@@ -1,7 +1,7 @@
 #!/bin/sh
 echo "Starting Development ENV - PHP7"
 echo "Deleting Nginx Docker, discarding old logs"
-docker rm xhprof_nginx
+docker rm -f xhprof_nginx
 
 echo "Starting Dockers, in order of inclusion"
 docker start xhprof_redis xhprof_mysql xhprof_php

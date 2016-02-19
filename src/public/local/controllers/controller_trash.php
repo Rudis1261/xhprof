@@ -1,6 +1,6 @@
 <?php if ( ! defined('DOC_ROOT')) { header('HTTP/1.1 403 Forbidden'); die('Permission Denied'); }
 
-class controller_home Extends controller
+class controller_trash Extends controller
 {
     public $Error;
     public $db;
@@ -16,8 +16,14 @@ class controller_home Extends controller
         $this->JS       = $JS;
     }
 
-    function home($input)
+    function trash($input)
     {
-        $this->render('Home', '');
+        $iter = new RecursiveDirectoryIterator("xhprof/runs", FilesystemIterator::SKIP_DOTS);
+        foreach (new RecursiveIteratorIterator($iter) as $item) {
+            unlink($item);
+        }
+
+        $this->Error->add('info', "Cleared Runs");
+        redirect('/');
     }
 }

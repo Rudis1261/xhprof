@@ -79,9 +79,8 @@ function xhprof_generate_mime_header($type, $length) {
   }
 
   if ($mime) {
-    //header('Content-type', $mime);
-    //xhprof_http_header('Content-type', $mime);
-    //xhprof_http_header('Content-length', (string)$length);
+    xhprof_http_header('Content-type', $mime);
+    xhprof_http_header('Content-length', (string)$length);
   }
 }
 
@@ -484,7 +483,7 @@ function xhprof_render_image($xhprof_runs_impl, $run_id, $type, $threshold,
     exit();
   }
 
-  //xhprof_generate_mime_header($type, strlen($content));
-  file_put_contents('image.png', $content);
+  xhprof_generate_mime_header($type, strlen($content));
+  //file_put_contents('image.png', $content);
   echo $content;
 }

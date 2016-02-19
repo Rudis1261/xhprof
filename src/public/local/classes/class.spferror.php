@@ -116,6 +116,9 @@
                                " . $addError . implode('<br />', $error) . "
                             </div>";
                 }
+                $out .= '<script>window.setTimeout(function(){
+                            $(\'.alert-dismissible\').hide();
+                        }, 3000);</script>';
                 unset($_SESSION['error']);
                 return $out;
             }

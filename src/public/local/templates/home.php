@@ -1,15 +1,26 @@
     <!-- Begin page content -->
     <div class="container">
       <div class="page-header">
-        <h1>Sticky footer with fixed navbar</h1>
+        <h1>Profiling PHP with XHProf <small>Increasing your PHP application's performance</small></h1>
       </div>
-      <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code>padding-top: 60px;</code> on the <code>body > .container</code>.</p>
-      <p>Back to <a href="../sticky-footer">the default sticky footer</a> minus the navbar.</p>
     </div>
 
     <div class="container">
+        <div class="col-md-8">
+            <h4>What we will cover</h4>
+            <ul>
+                <li>Just how fast is your PHP application?</li>
+                <li>Using XHProf</li>
+                <li>Exiting Early</li>
+                <li>N+1 Problem</li>
+                <li>Looping mad</li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <img class="img img-responsive" src="<?php echo SITE_URL; ?>/assets/img/php.jpg" alt="logo" />
+        </div>
         <?php
-            $amount = 5000000;
+            /*$amount = 5000000;
             $factor = $amount / 10;
             $range = range(1, $amount);
 
@@ -26,6 +37,6 @@
                 if ($i % $factor == 0) {
                     echo "Running $i<br />";
                 }
-            }
+            }*/
         ?>
     </div>

@@ -875,7 +875,7 @@ function full_report($url_params, $symbol_tab, $sort, $run1, $run2) {
 
   print("<center><br><h3>" .
         xhprof_render_link($callgraph_report_title,
-                    "$base_path/callgraph.php" . "?" . http_build_query($url_params))
+                    "$base_path/callgraph.php" . "?" . http_build_query($url_params), '', '', '', '_blank')
         . "</h3></center>");
 
 

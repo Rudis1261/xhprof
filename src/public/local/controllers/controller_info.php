@@ -2,10 +2,10 @@
 
 class controller_info Extends controller
 {
-    private $Error;
-    private $db;
-    private $CSS;
-    private $JS;
+    public $Error;
+    public $db;
+    public $CSS;
+    public $JS;
 
     function __construct($Error, $db, $CSS, $JS)
     {
@@ -18,6 +18,7 @@ class controller_info Extends controller
 
     function info($input)
     {
-        $this->render('Info - PHP Info', phpinfo());
+        $this->template = 'info';
+        $this->render('Info - PHP Info');
     }
 }

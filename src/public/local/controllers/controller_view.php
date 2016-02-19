@@ -1,6 +1,6 @@
 <?php if ( ! defined('DOC_ROOT')) { header('HTTP/1.1 403 Forbidden'); die('Permission Denied'); }
 
-class controller_home Extends controller
+class controller_view Extends controller
 {
     public $Error;
     public $db;
@@ -16,8 +16,9 @@ class controller_home Extends controller
         $this->JS       = $JS;
     }
 
-    function home($input)
+    function view($input)
     {
-        $this->render('Home', '');
+        $this->template = 'iframe';
+        $this->render('XHProf View Results');
     }
 }

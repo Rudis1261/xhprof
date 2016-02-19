@@ -2,11 +2,11 @@
 
 class Controller
 {
-    private $Error;
-    private $db;
-    private $CSS;
-    private $JS;
-    private $template = 'home';
+    public $Error;
+    public $db;
+    public $CSS;
+    public $JS;
+    public $template = 'home';
 
     function __construct($Error , $db, $CSS, $JS)
     {
@@ -18,13 +18,14 @@ class Controller
 
     function render($title = "", $body = "", $dataArray = [])
     {
+        $msg = $this->Error->alert();
+        $dataArray['db'] = $this->db;
         echo Template::loadTemplate('layout', [
+            'msg'     => $msg,
             'header'  => Template::loadTemplate('header', $dataArray),
             'navbar'  => Template::loadTemplate('navbar', $dataArray),
             'content' => Template::loadTemplate($this->template, $dataArray),
-            'footer'  => Template::loadTemplate('footer', [
-                $dataArray, 'db' => $this->db
-            ])
+            'footer'  => Template::loadTemplate('footer', $dataArray),
         ]);
         exit();
     }
