@@ -57,3 +57,30 @@
     </div>
   </div>
 </nav>
+
+<div class="container">
+  <ul class="nav nav-tabs">
+    <li role="presentation" <?php menuActive('/'); ?>>
+        <a href="<?php echo SITE_URL; ?>/Home">Start</a>
+    </li>
+    <li role="presentation" <?php menuActive('performance'); ?>>
+        <a href="<?php echo SITE_URL; ?>/Performance">Performance</a>
+    </li>
+
+    <li role="presentation" <?php menuActive('view'); ?>>
+        <a target="_blank" href="<?php echo SITE_URL; ?>/view">XHProf</a>
+    </li>
+
+    <li role="presentation" <?php menuActive('exitearly'); ?>>
+        <a href="<?php echo SITE_URL; ?>/ExitEarly">Exiting Early</a>
+    </li>
+
+    <li role="presentation" <?php menuActive('nplusone'); ?>>
+        <a href="<?php echo SITE_URL; ?>/nPlusOne">N+1 Problem</a>
+    </li>
+
+    <li role="presentation" <?php menuActive('loopingmad'); ?>>
+        <a href="<?php echo SITE_URL; ?>/LoopingMad">Looping Mad</a>
+    </li>
+  </ul>
+</div>

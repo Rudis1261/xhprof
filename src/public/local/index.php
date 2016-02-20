@@ -4,7 +4,8 @@
 date_default_timezone_set('Africa/Johannesburg');
 
 // Determine our absolute document root
-define('CORE_ROOT', realpath(dirname(__FILE__) . '../'));
+define('CORE_ROOT', realpath(dirname(__FILE__) . '/../'));
+define('WEB_ROOT', realpath(dirname(__FILE__) . '/../'));
 define('DOC_ROOT', realpath(dirname(__FILE__)));
 define('SPF', true);
 
@@ -22,10 +23,6 @@ try {
 }
 
 require(DOC_ROOT . "/classes/functions.inc.php");
-
-// Lets start the function to get the execution time
-define('START_TIME', microtime_float());
-
 $list_url       = list_url();
 $getController  = $list_url['controller'];
 define('ACTIVE_CONTROLLER', $getController);

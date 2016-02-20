@@ -64,6 +64,12 @@ class Template
         return self::renderTemplate($template, $vars, $baseDir);
     }
 
+    public static function renderOutput($template, $vars = array(), $baseDir=null)
+    {
+        $vars['output'] = $template;
+        return self::render('output', $vars, $baseDir);
+    }
+
 
     private static function highlight($template, $baseDir = "")
     {
