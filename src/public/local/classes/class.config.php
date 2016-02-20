@@ -25,6 +25,8 @@ class Config extends Core_Config
         ini_set('error_reporting', -1);
         define('WEB_ROOT',  '');
         define('SITE_URL',  'http://localhost');
+        define('ASSETS', SITE_URL . "/assets");
+        define('IMG', ASSETS . "/img");
 
         $this->redisHost       = 'redis';
 

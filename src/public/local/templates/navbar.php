@@ -21,6 +21,7 @@
         </li>
         <li <?php menuActive('home'); ?>>
           <a href="<?php echo SITE_URL; ?>/home">
+            <?php echo icon('home'); ?>
             Home
           </a>
         </li>

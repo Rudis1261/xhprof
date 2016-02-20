@@ -6,7 +6,7 @@ function loopingBefore($amount = 5000000) {
 
     // Doing it prior to the for condition
     $count = count($range);
-    for($i = 1; $i < $count; $i++) {
+    for ($i = 1; $i < $count; $i++) {
         if ($i % $factor == 0) {
             echo "Running $i<br />";
         }

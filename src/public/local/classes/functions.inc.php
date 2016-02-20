@@ -658,16 +658,15 @@
 	}
 
     // Outputs a filesize in human readable format.
-    function bytes2str($val, $round = 0)
+    /*function bytes2str($val, $round = 0)
     {
         $unit = array('','K','M','G','T','P','E','Z','Y');
-        while($val >= 1000)
-        {
+        while($val >= 1000) {
             $val /= 1024;
             array_shift($unit);
         }
         return round($val, $round) . array_shift($unit) . 'B';
-    }
+    }*/
 
     // Tests for a valid email address and optionally tests for valid MX records, too.
     function valid_email($email, $test_mx = false)
@@ -1279,8 +1278,9 @@
 
     function microtime_float()
     {
-        list($usec, $sec) = explode(" ", microtime());
-        return ((float)$usec + (float)$sec);
+        return microtime(true);
+        //list($usec, $sec) = explode(" ", microtime());
+        //return ((float)$usec + (float)$sec);
     }
 
     // This is a mini addaptation of str_pad to pad a number, the default amount is 2
@@ -2449,20 +2449,6 @@
             return $types[$type];
         }
         return $input-1;
-    }
-
-    function echoBytes($size) {
-        $unit = ['B','KB','MB','GB','TB','PB'];
-        return round(
-            $size / pow(
-                1024, (
-                    $i = floor(
-                        log( $size, 1024 )
-                    )
-                )
-            ),
-            2
-        ) . $unit[$i];
     }
 
     function menuActive($name, $default = false)

@@ -1,5 +1,7 @@
 <?php
 
+require_once('templates/partials/auto_prepend.php');
+
 // Let's ensure we have optimal performance. Set this simple thing
 date_default_timezone_set('Africa/Johannesburg');
 ini_set('memory_limit','5G');
