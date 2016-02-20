@@ -4,6 +4,9 @@
 date_default_timezone_set('Africa/Johannesburg');
 ini_set('memory_limit','5G');
 
+ini_set('highlight.comment', '#B3B3B3; font-style: italic;');
+ini_set('highlight.html', '#333;');
+
 // Rewrite vars
 // I want to do it a bit differently
 // Var 1 would be the Class / Controller. Var 2 would be the optional method and any subsequent would be the var

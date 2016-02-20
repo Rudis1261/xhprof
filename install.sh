@@ -74,7 +74,10 @@ done
 while true; do
     read -p "IMPORT THE DATABASE? [y/n]: " yn2
     case $yn2 in
-        [Yy]* ) mysql -u root -proot -h 127.0.0.1 < local.sql; break;;
+        [Yy]* ) mysql -u root -proot -h 127.0.0.1 < data/local.sql;
+         mysql -u root -proot -h 127.0.0.1 < data/subscribers.sql;
+         mysql -u root -proot -h 127.0.0.1 < data/world.sql;
+        break;;
         [Nn]* ) echo "DB import ignored"; exit;;
         * ) echo "Please answer yes [y] or no [n].";;
     esac

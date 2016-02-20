@@ -19,24 +19,31 @@
         <div class="col-md-4">
             <img class="img img-responsive" src="<?php echo SITE_URL; ?>/assets/img/php.jpg" alt="logo" />
         </div>
+        <h2>Databases</h2>
         <?php
-            /*$amount = 5000000;
-            $factor = $amount / 10;
-            $range = range(1, $amount);
+            $db->query('SHOW DATABASES');
+            $rows = $db->getRows();
+            if (!empty($rows)) {
+                foreach ($rows as $row) {
+                    echo '<div>' . $row['Database'] . '</div>';
+                }
+            }
+        ?>
 
-            for($i = 1; $i < count($range); $i++) {
-                if ($i % $factor == 0) {
-                    echo "Running $i<br />";
+        <h2>Tables in `local` database</h2>
+        <?php
+            $db->query('SHOW TABLES');
+            $rows = $db->getRows();
+            if (!empty($rows)) {
+                foreach ($rows as $row) {
+                    echo '<div>' . current($row) . '</div>';
                 }
             }
 
+            Template::render('examples/1.0.for-in-assertion');
+            Template::highlight('examples/1.0.for-in-assertion');
 
-
-            $count = count($range);
-            for($i = 1; $i < $count; $i++) {
-                if ($i % $factor == 0) {
-                    echo "Running $i<br />";
-                }
-            }*/
+            Template::render('examples/1.1.for-before-assertion');
+            Template::highlight('examples/1.1.for-before-assertion');
         ?>
     </div>

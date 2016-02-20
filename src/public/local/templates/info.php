@@ -1,3 +1,6 @@
 <div class="container">
-    <?php phpinfo(); ?>
+    <?php
+        // Print out the current PHP installation information
+        phpinfo();
+    ?>
 </div>

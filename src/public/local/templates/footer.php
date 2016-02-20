@@ -1,11 +1,7 @@
     <footer class="footer">
-      <div class="container">
-        <p class="text-muted">
-          EXEC TIME: <b><?php echo round(microtime_float() - START_TIME, 5); ?></b> Seconds
-         | MEM: <b><?php echo echoBytes(memory_get_peak_usage()); ?></b>
-         | SQL: <b><?php echo count($db->queries); ?></b> Queries
-        </p>
-      </div>
+      <div class="footer-spacer">EXEC TIME:</div><b><?php echo round(microtime_float() - START_TIME, 5); ?></b><br />
+      <div class="footer-spacer">MEMORY:</div><b><?php echo echoBytes(memory_get_peak_usage()); ?></b><br />
+      <div class="footer-spacer">SQL QUERY:</div><b><?php echo count($db->queries); ?></b><br />
     </footer>
 
     <!-- Bootstrap core JavaScript

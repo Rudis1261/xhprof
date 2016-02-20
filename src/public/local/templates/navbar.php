@@ -33,14 +33,23 @@
       </ul>
       <ul class="nav navbar-nav pull-right">
         <?php if (XHPROF_ENABLED): ?>
-          <a href="?profile=0" class="btn btn-default navbar-btn" style="background: #FFF!important;">
+          <a href="?profile=0" class="btn btn-default navbar-btn xprofile__status--on" style="background: #FFF!important;">
             XHProf
-            <div class="xprofile__status on">&nbsp;</div>
+            <input
+              type="checkbox"
+              class="xprofile__status"
+              checked
+              onClick="$(this).parents('a')[0].click();"
+            />
           </a>
           <?php else: ?>
-          <a href="?profile=1" class="btn navbar-btn btn-default" style="background: #FFF!important;">
+          <a href="?profile=1" class="btn navbar-btn btn-default xprofile__status--off" style="background: #FFF!important;">
             XHProf
-            <div class="xprofile__status off">&nbsp;</div>
+            <input
+              type="checkbox"
+              class="xprofile__status"
+              onClick="$(this).parents('a')[0].click();"
+            />
           </a>
         <?php endif; ?>
       </ul>
