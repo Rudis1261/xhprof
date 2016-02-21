@@ -29,8 +29,25 @@ This took me a mind shift to start to do correctly. It's the basis of how you ap
     <?php Template::renderOutput('examples/3.1.0.pyramid'); ?>
     </div>
     <div class="col-md-6">
-    <h2>Short way</h2>
+    <h2>Nope, none of that</h2>
     <?php Template::highlight('examples/3.1.1.pyramid'); ?>
     <?php Template::renderOutput('examples/3.1.1.pyramid'); ?>
+    </div>
+</div>
+
+<br /><br />
+<h1>Called</h1>
+
+<div class="container">
+    <?php Template::render('partials/heroes'); ?>
+    <div class="col-md-6">
+    <h2></h2>
+    <?php Template::highlight('examples/3.2.0.test'); ?>
+    <?php Template::renderOutput('examples/3.2.0.test'); ?>
+    </div>
+    <div class="col-md-6">
+    <h2></h2>
+    <?php Template::highlight('examples/3.2.1.test'); ?>
+    <?php Template::renderOutput('examples/3.2.1.test'); ?>
     </div>
 </div>

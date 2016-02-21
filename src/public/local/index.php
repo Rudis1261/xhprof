@@ -5,7 +5,6 @@ date_default_timezone_set('Africa/Johannesburg');
 
 // Determine our absolute document root
 define('CORE_ROOT', realpath(dirname(__FILE__) . '/../'));
-define('WEB_ROOT', realpath(dirname(__FILE__) . '/../'));
 define('DOC_ROOT', realpath(dirname(__FILE__)));
 define('SPF', true);
 
@@ -15,12 +14,12 @@ require(DOC_ROOT . "/classes/class.config.php");
 Config::getConfig();
 
 // Initialize our session
-try {
+/*try {
     session_name('spfs');
     session_start();
 } catch(exception $e) {
     error_log($e->getMessage(), 4);
-}
+}*/
 
 require(DOC_ROOT . "/classes/functions.inc.php");
 $list_url       = list_url();

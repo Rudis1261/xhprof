@@ -1,5 +1,5 @@
 <?php
-    function getHeroesNonPyramid() {
+    function getHeroes() {
         $data = DOC_ROOT . '/data/heroes.json';
         if (!file_exists($data)) {
             return false;
@@ -17,6 +17,3 @@
 
         return $json;
     }
-
-    $heroes = getHeroesNonPyramid();
-    var_dump(array_Keys(current($heroes)));
