@@ -10,6 +10,6 @@
      * Or like this case, initialized before consuming it
      */
     $heroes = getHeroes();
-    foreach(range(0, 10) as $index) {
+    foreach(range(0, 47) as $index) {
         var_dump(printNameFromArray($heroes, $index));
     }

@@ -34,26 +34,3 @@ This took me a mind shift to start to do correctly. It's the basis of how you ap
     <?php Template::renderOutput('examples/3.1.1.pyramid'); ?>
     </div>
 </div>
-
-<br /><br />
-<h1>Where things get called, is important</h1>
-<ul>
-    <li>File Operation are expensive</li>
-    <li>Network trips are expensive</li>
-    <li>Getting data is expensive</li>
-    <li>Complex is complex for a reason <i><b>"Simplicity is the ultimate complexity"</b></i></li>
-</ul>
-
-<div class="container">
-    <?php Template::render('partials/heroes'); ?>
-    <div class="col-md-6">
-    <h2></h2>
-    <?php Template::highlight('examples/3.2.0.test'); ?>
-    <?php Template::renderOutput('examples/3.2.0.test'); ?>
-    </div>
-    <div class="col-md-6">
-    <h2></h2>
-    <?php Template::highlight('examples/3.2.1.test'); ?>
-    <?php Template::renderOutput('examples/3.2.1.test'); ?>
-    </div>
-</div>
