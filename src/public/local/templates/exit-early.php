@@ -36,7 +36,13 @@ This took me a mind shift to start to do correctly. It's the basis of how you ap
 </div>
 
 <br /><br />
-<h1>Called</h1>
+<h1>Where things get called, is important</h1>
+<ul>
+    <li>File Operation are expensive</li>
+    <li>Network trips are expensive</li>
+    <li>Getting data is expensive</li>
+    <li>Complex is complex for a reason <i><b>"Simplicity is the ultimate complexity"</b></i></li>
+</ul>
 
 <div class="container">
     <?php Template::render('partials/heroes'); ?>
