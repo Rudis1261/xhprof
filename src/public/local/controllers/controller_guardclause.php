@@ -1,6 +1,6 @@
 <?php if ( ! defined('DOC_ROOT')) { header('HTTP/1.1 403 Forbidden'); die('Permission Denied'); }
 
-class controller_exitearly Extends controller
+class controller_guardclause Extends controller
 {
     public $Error;
     public $db;
@@ -16,9 +16,9 @@ class controller_exitearly Extends controller
         $this->JS       = $JS;
     }
 
-    function exitearly($input)
+    function guardclause($input)
     {
-        $this->template = 'exit-early';
-        $this->render('Exiting Early');
+        $this->template = 'guard-clause';
+        $this->render('Guard Clause');
     }
 }

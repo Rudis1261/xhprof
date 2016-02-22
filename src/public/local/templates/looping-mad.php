@@ -13,30 +13,47 @@
 <div class="container">
     <?php Template::render('partials/heroes'); ?>
     <div class="col-md-6">
-    <h2></h2>
-    <?php Template::highlight('examples/4.0.0.test'); ?>
-    <?php Template::renderOutput('examples/4.0.0.test'); ?>
+    <h3></h3>
+    <?php Template::highlight('examples/5.0.0.test'); ?>
+    <?php Template::renderOutput('examples/5.0.0.test'); ?>
     </div>
     <div class="col-md-6">
-    <h2></h2>
-    <?php Template::highlight('examples/4.0.1.test'); ?>
-    <?php Template::renderOutput('examples/4.0.1.test'); ?>
+    <h3></h3>
+    <?php Template::highlight('examples/5.0.1.test'); ?>
+    <?php Template::renderOutput('examples/5.0.1.test'); ?>
     </div>
 </div>
+
 
 <br /><br />
 <h1>Sometimes hidden in complex applications</h1>
 
+<div class="container">
+    <div class="col-md-6">
+    <h3></h3>
+    <?php Template::highlight('examples/5.1.0.hidden'); ?>
+    <?php Template::renderOutput('examples/5.1.0.hidden'); ?>
+    </div>
+    <div class="col-md-6">
+    <h3></h3>
+    <?php Template::highlight('examples/5.1.1.hidden'); ?>
+    <?php Template::renderOutput('examples/5.1.1.hidden'); ?>
+    </div>
+</div>
+
+
+<br /><br />
+<h1>Sometimes it's not obvious, until someone points it out.</h1>
 
 <div class="container">
     <div class="col-md-6">
-    <h2></h2>
-    <?php Template::highlight('examples/4.1.0.hidden'); ?>
-    <?php Template::renderOutput('examples/4.1.0.hidden'); ?>
+    <h3>A conditional in the For loop</h3>
+    <?php Template::highlight('examples/5.2.0.for'); ?>
+    <?php Template::renderOutput('examples/5.2.0.for'); ?>
     </div>
     <div class="col-md-6">
-    <h2></h2>
-    <?php Template::highlight('examples/4.1.1.hidden'); ?>
-    <?php Template::renderOutput('examples/4.1.1.hidden'); ?>
+    <h3>A for loop based off a derived value</h3>
+    <?php Template::highlight('examples/5.2.1.for'); ?>
+    <?php Template::renderOutput('examples/5.2.1.for'); ?>
     </div>
 </div>

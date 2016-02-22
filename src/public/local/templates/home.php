@@ -18,7 +18,7 @@
                 </li>
 
                 <li>
-                    <a href="<?php echo SITE_URL; ?>/ExitEarly">Exiting Early</a>
+                    <a href="<?php echo SITE_URL; ?>/GuardClause">Guard Clause</a>
                 </li>
 
                 <li>

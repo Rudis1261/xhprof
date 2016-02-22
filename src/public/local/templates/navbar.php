@@ -71,8 +71,8 @@
         <a target="_blank" href="<?php echo SITE_URL; ?>/view">XHProf</a>
     </li>
 
-    <li role="presentation" <?php menuActive('exitearly'); ?>>
-        <a href="<?php echo SITE_URL; ?>/ExitEarly">Exiting Early</a>
+    <li role="presentation" <?php menuActive('guardclause'); ?>>
+        <a href="<?php echo SITE_URL; ?>/GuardClause">Guard Clause</a>
     </li>
 
     <li role="presentation" <?php menuActive('nplusone'); ?>>
