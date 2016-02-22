@@ -41,6 +41,89 @@ This took me a mind shift to start to do correctly. It's the basis of how you ap
 <div class="container">
     <?php Template::highlight('partials/cars'); ?>
     <?php require_once('templates/partials/cars.php'); ?>
+
+<?php
+    Cars::addCar( (new Car())->set('make', 'Opel')->set('model', 'Corsa Turbo')->set('year', 2013)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Mazda')->set('model', '3 MPS')->set('year', 2014)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Subaru')->set('model', 'Impreza STI')->set('year', 2004)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Toyota')->set('model', 'Hilux 4X4')->set('year', 1996)->set('luxury', false) );
+    Cars::addCar( (new Car())->set('make', 'Honda')->set('model', 'Civic')->set('year', 2010)->set('luxury', false) );
+    Cars::addCar( (new Car())->set('make', 'Mercedes')->set('model', 'AMG 65')->set('year', 2013)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Ferrari')->set('model', 'F40')->set('year', 1984)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Porsche')->set('model', '911 Turbo GT3')->set('year', 2015)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Porsche')->set('model', '911 Turbo GT2')->set('year', 2012)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Porsche')->set('model', '911 Turbo GTR')->set('year', 2013)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Opel')->set('model', 'Corsa Turbo')->set('year', 2013)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Mazda')->set('model', '3 MPS')->set('year', 2014)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Subaru')->set('model', 'Impreza STI')->set('year', 2004)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Toyota')->set('model', 'Hilux 4X4')->set('year', 1996)->set('luxury', false) );
+    Cars::addCar( (new Car())->set('make', 'Honda')->set('model', 'Civic')->set('year', 2010)->set('luxury', false) );
+    Cars::addCar( (new Car())->set('make', 'Mercedes')->set('model', 'AMG 65')->set('year', 2013)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Ferrari')->set('model', 'F40')->set('year', 1984)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Porsche')->set('model', '911 Turbo GT3')->set('year', 2015)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Porsche')->set('model', '911 Turbo GT2')->set('year', 2012)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Porsche')->set('model', '911 Turbo GTR')->set('year', 2013)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Opel')->set('model', 'Corsa Turbo')->set('year', 2013)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Mazda')->set('model', '3 MPS')->set('year', 2014)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Subaru')->set('model', 'Impreza STI')->set('year', 2004)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Toyota')->set('model', 'Hilux 4X4')->set('year', 1996)->set('luxury', false) );
+    Cars::addCar( (new Car())->set('make', 'Honda')->set('model', 'Civic')->set('year', 2010)->set('luxury', false) );
+    Cars::addCar( (new Car())->set('make', 'Mercedes')->set('model', 'AMG 65')->set('year', 2013)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Ferrari')->set('model', 'F40')->set('year', 1984)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Porsche')->set('model', '911 Turbo GT3')->set('year', 2015)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Porsche')->set('model', '911 Turbo GT2')->set('year', 2012)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Porsche')->set('model', '911 Turbo GTR')->set('year', 2013)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Opel')->set('model', 'Corsa Turbo')->set('year', 2013)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Mazda')->set('model', '3 MPS')->set('year', 2014)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Subaru')->set('model', 'Impreza STI')->set('year', 2004)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Toyota')->set('model', 'Hilux 4X4')->set('year', 1996)->set('luxury', false) );
+    Cars::addCar( (new Car())->set('make', 'Honda')->set('model', 'Civic')->set('year', 2010)->set('luxury', false) );
+    Cars::addCar( (new Car())->set('make', 'Mercedes')->set('model', 'AMG 65')->set('year', 2013)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Ferrari')->set('model', 'F40')->set('year', 1984)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Porsche')->set('model', '911 Turbo GT3')->set('year', 2015)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Porsche')->set('model', '911 Turbo GT2')->set('year', 2012)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Porsche')->set('model', '911 Turbo GTR')->set('year', 2013)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Opel')->set('model', 'Corsa Turbo')->set('year', 2013)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Mazda')->set('model', '3 MPS')->set('year', 2014)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Subaru')->set('model', 'Impreza STI')->set('year', 2004)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Toyota')->set('model', 'Hilux 4X4')->set('year', 1996)->set('luxury', false) );
+    Cars::addCar( (new Car())->set('make', 'Honda')->set('model', 'Civic')->set('year', 2010)->set('luxury', false) );
+    Cars::addCar( (new Car())->set('make', 'Mercedes')->set('model', 'AMG 65')->set('year', 2013)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Ferrari')->set('model', 'F40')->set('year', 1984)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Porsche')->set('model', '911 Turbo GT3')->set('year', 2015)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Porsche')->set('model', '911 Turbo GT2')->set('year', 2012)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Porsche')->set('model', '911 Turbo GTR')->set('year', 2013)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Opel')->set('model', 'Corsa Turbo')->set('year', 2013)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Mazda')->set('model', '3 MPS')->set('year', 2014)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Subaru')->set('model', 'Impreza STI')->set('year', 2004)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Toyota')->set('model', 'Hilux 4X4')->set('year', 1996)->set('luxury', false) );
+    Cars::addCar( (new Car())->set('make', 'Honda')->set('model', 'Civic')->set('year', 2010)->set('luxury', false) );
+    Cars::addCar( (new Car())->set('make', 'Mercedes')->set('model', 'AMG 65')->set('year', 2013)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Ferrari')->set('model', 'F40')->set('year', 1984)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Porsche')->set('model', '911 Turbo GT3')->set('year', 2015)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Porsche')->set('model', '911 Turbo GT2')->set('year', 2012)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Porsche')->set('model', '911 Turbo GTR')->set('year', 2013)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Opel')->set('model', 'Corsa Turbo')->set('year', 2013)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Mazda')->set('model', '3 MPS')->set('year', 2014)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Subaru')->set('model', 'Impreza STI')->set('year', 2004)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Toyota')->set('model', 'Hilux 4X4')->set('year', 1996)->set('luxury', false) );
+    Cars::addCar( (new Car())->set('make', 'Honda')->set('model', 'Civic')->set('year', 2010)->set('luxury', false) );
+    Cars::addCar( (new Car())->set('make', 'Mercedes')->set('model', 'AMG 65')->set('year', 2013)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Ferrari')->set('model', 'F40')->set('year', 1984)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Porsche')->set('model', '911 Turbo GT3')->set('year', 2015)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Porsche')->set('model', '911 Turbo GT2')->set('year', 2012)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Porsche')->set('model', '911 Turbo GTR')->set('year', 2013)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Opel')->set('model', 'Corsa Turbo')->set('year', 2013)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Mazda')->set('model', '3 MPS')->set('year', 2014)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Subaru')->set('model', 'Impreza STI')->set('year', 2004)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Toyota')->set('model', 'Hilux 4X4')->set('year', 1996)->set('luxury', false) );
+    Cars::addCar( (new Car())->set('make', 'Honda')->set('model', 'Civic')->set('year', 2010)->set('luxury', false) );
+    Cars::addCar( (new Car())->set('make', 'Mercedes')->set('model', 'AMG 65')->set('year', 2013)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Ferrari')->set('model', 'F40')->set('year', 1984)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Porsche')->set('model', '911 Turbo GT3')->set('year', 2015)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Porsche')->set('model', '911 Turbo GT2')->set('year', 2012)->set('luxury', true) );
+    Cars::addCar( (new Car())->set('make', 'Porsche')->set('model', '911 Turbo GTR')->set('year', 2013)->set('luxury', true) );
+?>
 </div>
 
 <div class="container">

@@ -1,15 +1,17 @@
 <?php
 function foreachGuarded() {
-    $cars = Cars::all();
-    foreach($cars as $cid => $car){
+    foreach(Cars::all() as $car){
         if (!$car->isLuxury()) {
             continue;
         }
-        $message = "";
-        $message .= "LUXURY ";
-        $message .= "{$car->make}, ";
-        $message .= "{$car->model}";
+        $message = "LUXURY ";
+        $message .= "{$car->get('make')}, ";
+        $message .= "{$car->get('model')}";
         var_dump($message);
+        if (!$car->isModern()) {
+            continue;
+        }
+        var_dump("Is modern {$car->get('make')}");
     }
 }
 foreachGuarded();
