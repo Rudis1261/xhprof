@@ -2,7 +2,7 @@ use `local`;
 DROP TABLE IF EXISTS `subscribers`;
 
 create table `subscribers` (
-    id MEDIUMINT NOT NULL AUTO_INCREMENT,
+    id MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT,
     firstname VARCHAR(50),
     surname VARCHAR(50),
     email VARCHAR(50),

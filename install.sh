@@ -74,9 +74,12 @@ done
 while true; do
     read -p "IMPORT THE DATABASE? [y/n]: " yn2
     case $yn2 in
-        [Yy]* ) mysql -u root -proot -h 127.0.0.1 < src/public/local/data/local.sql;
-         mysql -u root -proot -h 127.0.0.1 < src/public/local/data/subscribers.sql;
-         mysql -u root -proot -h 127.0.0.1 < src/public/local/data/world.sql;
+        [Yy]* ) echo "Creating Local DB";
+        mysql -u root -proot -h 127.0.0.1 < src/public/local/data/local.sql;
+        echo "Creating Country DB and importing rows";
+        mysql -u root -proot -h 127.0.0.1 < src/public/local/data/country.sql;
+        echo "Creating Subscriber DB and importing rows";
+        mysql -u root -proot -h 127.0.0.1 < src/public/local/data/subscribers.sql;
         break;;
         [Nn]* ) echo "DB import ignored"; exit;;
         * ) echo "Please answer yes [y] or no [n].";;

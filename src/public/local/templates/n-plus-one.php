@@ -3,15 +3,18 @@
 <hr />
 
 <div class="container">
+    <h3>N+1 May look super obvious at times. But sometimes with longer pieces of code, it may be hidden.</h3>
 </div>
 
-<hr />
-
 <div class="container">
-</div>
-
-<hr />
-
-
-<div class="container">
+    <div class="col-md-6">
+    <h3>Multiple Queries</h3>
+    <?php Template::highlight('examples/4.0.0.simple'); ?>
+    <?php Template::renderOutput('examples/4.0.0.simple'); ?>
+    </div>
+    <div class="col-md-6">
+    <h3>Single More Complex Query</h3>
+    <?php Template::highlight('examples/4.0.1.simple'); ?>
+    <?php Template::renderOutput('examples/4.0.1.simple'); ?>
+    </div>
 </div>

@@ -25,7 +25,7 @@
 </div>
 
 
-<br /><br />
+<!-- <br /><br />
 <h1>Sometimes hidden in complex applications</h1>
 
 <div class="container">
@@ -39,7 +39,7 @@
     <?php Template::highlight('examples/5.1.1.hidden'); ?>
     <?php Template::renderOutput('examples/5.1.1.hidden'); ?>
     </div>
-</div>
+</div> -->
 
 
 <br /><br />

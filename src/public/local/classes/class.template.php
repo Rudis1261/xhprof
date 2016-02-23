@@ -67,11 +67,11 @@ class Template
     public static function renderOutput($template, $vars = array(), $baseDir=null)
     {
         $vars['output'] = $template;
-        return self::render('output', $vars, $baseDir);
+        return self::renderTemplate('output', $vars, $baseDir);
     }
 
 
-    private static function highlight($template, $baseDir = "")
+    private static function highlight($template, $vars = array(), $baseDir = "")
     {
         if (empty($baseDir)) {
             $baseDir = self::getBaseDir();
