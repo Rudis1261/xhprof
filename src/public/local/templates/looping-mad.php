@@ -11,35 +11,35 @@
 </ul>
 
 <div class="container">
-    <?php Template::render('partials/heroes'); ?>
+    <?php //Template::render('partials/heroes'); ?>
     <div class="col-md-6">
     <h3></h3>
-    <?php Template::highlight('examples/5.0.0.test'); ?>
-    <?php Template::renderOutput('examples/5.0.0.test'); ?>
+    <?php //Template::highlight('examples/5.0.0.test'); ?>
+    <?php //Template::renderOutput('examples/5.0.0.test'); ?>
     </div>
     <div class="col-md-6">
     <h3></h3>
-    <?php Template::highlight('examples/5.0.1.test'); ?>
-    <?php Template::renderOutput('examples/5.0.1.test'); ?>
+    <?php //Template::highlight('examples/5.0.1.test'); ?>
+    <?php //Template::renderOutput('examples/5.0.1.test'); ?>
     </div>
 </div>
 
 
-<!-- <br /><br />
-<h1>Sometimes hidden in complex applications</h1>
+<br /><br />
+<h1>Sometimes, things are hidden from the eye</h1>
 
 <div class="container">
     <div class="col-md-6">
-    <h3></h3>
-    <?php Template::highlight('examples/5.1.0.hidden'); ?>
-    <?php Template::renderOutput('examples/5.1.0.hidden'); ?>
+    <h3>Opening file on each write</h3>
+    <?php Template::highlight('examples/5.1.0.fopen'); ?>
+    <?php Template::renderOutput('examples/5.1.0.fopen'); ?>
     </div>
     <div class="col-md-6">
-    <h3></h3>
-    <?php Template::highlight('examples/5.1.1.hidden'); ?>
-    <?php Template::renderOutput('examples/5.1.1.hidden'); ?>
+    <h3>Single file handle for all writes</h3>
+    <?php Template::highlight('examples/5.1.1.fopen'); ?>
+    <?php Template::renderOutput('examples/5.1.1.fopen'); ?>
     </div>
-</div> -->
+</div>
 
 
 <br /><br />
@@ -55,5 +55,33 @@
     <h3>A for loop based off a derived value</h3>
     <?php Template::highlight('examples/5.2.1.for'); ?>
     <?php Template::renderOutput('examples/5.2.1.for'); ?>
+    </div>
+</div>
+
+
+<br /><br />
+<h1>Nested foreach loops</h1>
+
+<div class="container">
+    <?php Template::render('partials/poster_prep'); ?>
+    <?php Template::highlight('partials/poster_prep'); ?>
+</div>
+<div class="container">
+    <div class="col-md-6">
+        <h3>N+1 Problem</h3>
+
+        <?php Template::highlight('examples/5.3.0.nested'); ?>
+        <br />
+        <center>
+            <?php Template::render('examples/5.3.0.nested'); ?>
+        </center>
+        </div>
+        <div class="col-md-6">
+        <h3>PreProcessing Based on needed data</h3>
+        <?php Template::highlight('examples/5.3.1.nested'); ?>
+        <br />
+        <center>
+            <?php Template::render('examples/5.3.1.nested'); ?>
+        </center>
     </div>
 </div>
