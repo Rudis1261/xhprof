@@ -128,7 +128,9 @@ code {
 }
 
 
-
+.navbar-inverse {
+  border-bottom: 4px solid #4F5B93;
+}
 
 [role='presentation'] > a {
   color: black!important;
@@ -160,11 +162,11 @@ a.navbar-brand {
 }
 
 a:hover {
-  color: #555 !important;
+  color: #8892BF !important;
   text-decoration: underline;
 }
 
 a {
-  color: #333 !important;
+  color: #4F5B93 !important;
   text-decoration: underline;
 }
