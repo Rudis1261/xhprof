@@ -15,7 +15,7 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li>
-          <a href="<?php echo SITE_URL; ?>/trash" style="color: red;">
+          <a href="<?php echo SITE_URL; ?>/trash" style="color: red !important; position: relative; top: 2px;">
             <?php echo icon('trash'); ?>
           </a>
         </li>

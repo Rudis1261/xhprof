@@ -80,6 +80,8 @@ while true; do
         mysql -u root -proot -h 127.0.0.1 < src/public/local/data/country.sql;
         echo "Creating Subscriber DB and importing rows";
         mysql -u root -proot -h 127.0.0.1 < src/public/local/data/subscribers.sql;
+        echo "Creating TV DB and importing rows";
+        mysql -u root -proot -h 127.0.0.1 < src/public/local/data/tvtracker.sql;
         break;;
         [Nn]* ) echo "DB import ignored"; exit;;
         * ) echo "Please answer yes [y] or no [n].";;
