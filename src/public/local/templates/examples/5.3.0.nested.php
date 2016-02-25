@@ -2,8 +2,7 @@
     function foreachSubselect() {
         $shows = "SELECT * FROM
             `tv`
-        ORDER by rand()
-        LIMIT 12";
+        ORDER by `seriesname` ASC";
 
         $episodes = "SELECT
             max(`s`) as s,
@@ -15,7 +14,8 @@
         $db = Database::getDatabase();
         $db->query($shows);
 
-        foreach($db->getRows() as $index => $show) {
+        $images = 0;
+        foreach($db->getRows() as $show) {
             $poster = getPoster($show);
             if (empty($poster)) {
                 continue;
@@ -24,11 +24,15 @@
                 continue;
             }
 
+            if ($images == 120) {
+                break;
+            }
+            $images++;
+
             $data = $db->query($episodes, [
                 'sid' => $show['seriesid']
             ]);
             $row = $db->getRow();
-
             Template::render('partials/show',[
                 'poster' => TV_DIR . "/{$poster}",
                 'name' => $show['seriesname'],

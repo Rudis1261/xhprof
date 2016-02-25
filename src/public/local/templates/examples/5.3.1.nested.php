@@ -2,8 +2,7 @@
     function foreachPreProcess() {
         $shows = "SELECT * FROM
             `tv`
-        ORDER by rand()
-        LIMIT 12";
+        ORDER by `seriesname` ASC";
 
         $episodes = "SELECT
             seriesid,
@@ -18,9 +17,11 @@
         $showData = $db->getRows();
 
         $db->query($episodes);
-        $epData = $db->transform($db->getRows(), 'seriesid');
+        $ep = $db->getRows();
+        $epData = $db->transform($ep, 'seriesid');
 
-        foreach($showData as $index => $show) {
+        $images = 0;
+        foreach($showData as $show) {
             $poster = getPoster($show);
             if (empty($poster)) {
                 continue;
@@ -28,7 +29,10 @@
             if (!file_exists(TV_DIR . "/{$poster}")) {
                 continue;
             }
-
+            if ($images == 120) {
+                break;
+            } 
+            $images++;
             Template::render('partials/show',[
                 'poster' => TV_DIR . "/{$poster}",
                 'name' => $show['seriesname'],

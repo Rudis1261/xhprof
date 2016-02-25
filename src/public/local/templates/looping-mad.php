@@ -11,16 +11,16 @@
 </ul>
 
 <div class="container">
-    <?php //Template::render('partials/heroes'); ?>
+    <?php Template::render('partials/heroes'); ?>
     <div class="col-md-6">
     <h3></h3>
-    <?php //Template::highlight('examples/5.0.0.test'); ?>
-    <?php //Template::renderOutput('examples/5.0.0.test'); ?>
+    <?php Template::highlight('examples/5.0.0.test'); ?>
+    <?php Template::renderOutput('examples/5.0.0.test'); ?>
     </div>
     <div class="col-md-6">
     <h3></h3>
-    <?php //Template::highlight('examples/5.0.1.test'); ?>
-    <?php //Template::renderOutput('examples/5.0.1.test'); ?>
+    <?php Template::highlight('examples/5.0.1.test'); ?>
+    <?php Template::renderOutput('examples/5.0.1.test'); ?>
     </div>
 </div>
 
@@ -60,7 +60,7 @@
 
 
 <br /><br />
-<h1>Nested foreach loops</h1>
+<h1>Loops are expensive!</h1>
 
 <div class="container">
     <?php Template::render('partials/poster_prep'); ?>
