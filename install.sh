@@ -59,6 +59,24 @@ function createContainers {
 }
 
 
+# CHECK IF DOCKER IS INSTALLED
+command -v docker >/dev/null 2>&1 || {
+    echo "Docker not installed!!  Aborting!!" >&2;
+    echo "Installation Documentation: https://docs.docker.com/engine/installation/" >&2;
+}
+docker -v
+
+
+# CREATE THE DOCKER CONTAINERS
+while true; do
+    read -p "BUILD DOCKER PHP IMAGE? [y/n]: " yn1
+    case $yn1 in
+        [Yy]* ) ./buildImage.sh; break;;
+        [Nn]* ) echo "PHP Image not created"; break;;
+        * ) echo "Please answer yes [y] or no [n].";;
+    esac
+done
+
 
 # CREATE THE DOCKER CONTAINERS
 while true; do
@@ -74,7 +92,10 @@ done
 while true; do
     read -p "IMPORT THE DATABASE? [y/n]: " yn2
     case $yn2 in
-        [Yy]* ) echo "Creating Local DB";
+        [Yy]* )
+        echo "Ensuring that DOCKER Containers are started";
+        ./start.sh
+        echo "Creating Local DB";
         mysql -u root -proot -h 127.0.0.1 < src/public/local/data/local.sql;
         echo "Creating Country DB and importing rows";
         mysql -u root -proot -h 127.0.0.1 < src/public/local/data/country.sql;
